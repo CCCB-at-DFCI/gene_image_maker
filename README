@@ -1,5 +1,11 @@
 This is a simple script for creating coverage plots for *Seq data.
 
+DEPENDENCIES:
+-HTSeq
+-numpy
+-matplotlib
+(e.g. you should be able to import any of these in your active session without error)
+
 You can call it like:
 python img_maker.py /path/to/bam/sample.bam /path/to/gtf_file.gtf ENST00000371222 2000 1000 pdf
 

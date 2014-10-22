@@ -1,8 +1,12 @@
-import HTSeq
-import matplotlib.pyplot as plt
-from matplotlib.patches import Rectangle, Polygon
-import numpy as np
 import sys
+
+try:
+  import HTSeq
+  import matplotlib.pyplot as plt
+  from matplotlib.patches import Rectangle, Polygon
+  import numpy as np
+except ImportError as ex:
+  sys.exit("Failed to import a required dependency: "+str(ex.message))
 
 # features that we are including in the gene model picture:
 # need to match those in the GTF (the third column)

@@ -1,7 +1,10 @@
-import HTSeq
 import sys
-import numpy as np
-import draw_script
+try:
+  import HTSeq
+  import numpy as np
+  import draw_script
+except ImportError as ex:
+  sys.exit("Failed when importing dependencies: "+str(ex.message))
 
 # output formats for images:
 OUTPUT_FORMATS = ['png', 'pdf']
