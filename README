@@ -1,0 +1,19 @@
+This is a simple script for creating coverage plots for *Seq data.
+
+You can call it like:
+python img_maker.py /path/to/bam/sample.bam /path/to/gtf_file.gtf ENST00000371222 2000 1000 pdf
+
+Args are:
+1.  path to a bam file (should be sorted and indexed, so make sure that a .bai file is also there.  Otherwise an exception is thrown)
+2.  path to a GTF file.  Ensure that it has a transcript_id field
+3.  a transcript ID.  This should be found in the 'transcript_id' attribute in the final field of the GTF line.  Since each gene has multiple
+    transcripts, this allows you to specify which one you would like for the given gene.
+4.  Left-buffer.  How many base pairs to the left of the transcript region you would like to plot
+5.  Right-buffer.  How many base pairs to the right of the transcript region you would like to plot
+6.  Output format.  png, pdf
+
+Potential hangups include:
+- a BAM file that is not sorted and indexed
+- a BAM file that was created such that the chromosome names do not match with those in the GTF.  The script checks if
+  the BAM and GTF files have the 'chr' prefix and handles the matching there.  However, for other types of differences
+  in the naming scheme, you may have to play around with the chromosome names yourself, or edit the scripts. 
