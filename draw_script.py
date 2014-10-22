@@ -272,14 +272,6 @@ def add_gene_name(fig, gene_name):
   ax = fig.gca()
   ax.set_title(gene_name)
 
-  
-def setup_config(config, max_depth, region_size):
-  config.ASPECT_RATIO = config.ASPECT_RATIO/float(max_depth/float(region_size))
-  config.GENE_MODEL_HEIGHT = config.GENE_MODEL_HEIGHT*max_depth
-  config.GENE_MODEL_FEATURE_HEIGHTS={k:v*config.GENE_MODEL_HEIGHT for k,v in config.GENE_MODEL_FEATURE_HEIGHTS.iteritems()}
-  config.VERTICAL_OFFSET = config.VERTICAL_OFFSET*max_depth
-  config.DIRECTION_MARKER_SIZE=(0.5*config.DIRECTION_MARKER_SIZE)/(np.sqrt(3)/2.0)
-
 
 def make_gene_plot(cvg, feature_array, buffer_left, format):
   """
